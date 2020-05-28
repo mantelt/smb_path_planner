@@ -4,7 +4,7 @@
 frame_id: "world"
 visualize: true
 verbose_planner: true
-use_global_planner_only: true
+use_global_planner_only: false
 
 bounding_box_inflation: 0.10  # [m] - Additional inflation of robot radius
 robot_radius: 0.5             # [m] - This is considered as the radius of the ball
@@ -15,7 +15,7 @@ planning_height: 0.5          # [m] - Nominal planning height if traversability
 max_initial_rotation: 5.0     # [deg] - min angle between current robot yaw and
                               # the first waypoint direction of global path
 threshold_goal_reached: 0.20  # [m] Distance to the global goal to consider it reached
-check_traversability: true    # Whether or not to use traversability information
+check_traversability: false    # Whether or not to use traversability information
                               # when planning
                               
 maximum_difference_elevation: 0.5 # Threshold to consider if we are nearby a cliff
@@ -30,11 +30,11 @@ sampling_dt: 0.1              # [s] Sampling time for trajectory to send to the 
 
 ################################ GLOBAL PLANNER ################################
 global_timer_dt: 0.1          # [s]
-global_interp_dt: 0.05        # [s] This has to be small enough for collision 
+global_interp_dt: 0.15        # [s] This has to be small enough for collision 
                               # checks of the global path
 planner_type: 1               # 0:RRT connect, 1:RRT*, 2:Informed RRT*, 3:Bi-RRT*, 4:PRM
 
-simplify_solution: false      # If true, it reduces the number of waypoints a lot
+simplify_solution: true      # If true, it reduces the number of waypoints a lot
 trust_approx_solution: false  # Whether or not we should reach the goal exactly
 optimistic_voxblox: true      # Whether we can consider unknown space free in Voxblox
 traversability_threshold: 0.5 # [-] Threshold to consider a seen spot as traversable (between 0 and 1)

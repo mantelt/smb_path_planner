@@ -4,7 +4,7 @@
 frame_id: "world"
 visualize: true
 verbose_planner: true
-use_global_planner_only: true
+use_global_planner_only: false
 
 bounding_box_inflation: 0.10  # [m] - Additional inflation of robot radius
 robot_radius: 0.6             # [m] - This is considered as the radius of the ball
